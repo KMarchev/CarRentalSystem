@@ -1,0 +1,47 @@
+package command.classes;
+
+import command.interfaces.Command;
+import exception.CommandException;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Manages and provides command executables based on command strings.
+ */
+
+public class Executer {
+
+    private static final Map<String, Command> executerMap=new HashMap<>();
+
+    static {
+        executerMap.put("ADD CAR", new AddCar());
+        executerMap.put("LIST CARS", new ListCars());
+    }
+
+
+    /**
+     * Returns the Command corresponding to the argument.
+     *
+     * @param args command arguments.
+     * @return Command instance mapped to the command.
+     * @throws CommandException if no arguments are provided or command is invalid.
+     */
+
+    public static Command executable(String args){
+
+        if (args==null||args.isBlank()) {
+            throw new CommandException("No arguments!");
+        }
+
+        Command command = executerMap.getOrDefault(args.toUpperCase(), null);
+
+        if(command==null){
+            throw new CommandException("Invalid command!");
+        }
+
+        return command;
+
+    }
+
+}

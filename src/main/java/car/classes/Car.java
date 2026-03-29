@@ -1,5 +1,6 @@
 package car.classes;
 
+import exception.CarCreateException;
 import helper.ValueValidator;
 
 public abstract class Car {
@@ -12,7 +13,7 @@ public abstract class Car {
 
     public Car(String[] params) {
         if(!validateArguments(params)){
-            throw new IllegalArgumentException("Invalid arguments!\n");
+            throw new CarCreateException("Invalid arguments!\n");
         }
         this.id=Integer.parseInt(params[0]);
         this.maker=params[1];
@@ -23,7 +24,7 @@ public abstract class Car {
     }
 
     protected boolean validateArguments(String[] args){
-        return args.length!=5
+        return args.length==5
                 && ValueValidator.isValidId(args[0])
                 && ValueValidator.isValidName(args[1])
                 && ValueValidator.isValidName(args[2])
@@ -77,5 +78,16 @@ public abstract class Car {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("ID:%d, Name:%s %s, Year Made:%d, Type:%s, Availability: %s"
+                ,id
+                ,maker
+                ,model
+                ,year
+                ,type
+                ,isAvailable ? "Available" : "Rented");
     }
 }
