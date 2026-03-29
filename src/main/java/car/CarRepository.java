@@ -43,4 +43,11 @@ public class CarRepository {
         return -1;
     }
 
+    public List<Car> getAvailableCarsList(){
+        return cars
+                .stream()
+                .filter(Car::isAvailable)
+                .toList();
+    }
+
 }

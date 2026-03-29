@@ -19,16 +19,16 @@ public abstract class Car {
         this.model=params[2];
         this.year=Integer.parseInt(params[3]);
         this.type=params[4];
-        this.isAvailable = params[5].equals("Available");
+        this.isAvailable = true;
     }
 
     protected boolean validateArguments(String[] args){
-        return ValueValidator.isValidId(args[0])
+        return args.length!=5
+                && ValueValidator.isValidId(args[0])
                 && ValueValidator.isValidName(args[1])
                 && ValueValidator.isValidName(args[2])
                 && ValueValidator.isValidYear(args[3])
-                && ValueValidator.isValidName(args[4])
-                && ValueValidator.isValidAvailability(args[5]);
+                && ValueValidator.isValidName(args[4]);
     }
 
     public int getId() {
