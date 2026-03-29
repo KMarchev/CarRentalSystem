@@ -28,9 +28,9 @@ public class EditCar implements Command {
         String[] params= Arrays.stream(scanner.nextLine().split(",")).map(String::trim).toArray(String[]::new);
 
         if(!ValueValidator.isValidName(params[0])
-                && !ValueValidator.isValidName(params[1])
-                && !ValueValidator.isValidYear(params[2])
-                && !CarFactory.isValidType(params[3])){
+                || !ValueValidator.isValidName(params[1])
+                || !ValueValidator.isValidYear(params[2])
+                || !CarFactory.isValidType(params[3])){
             throw new CommandException("Invalid arguments! Change was not saved.");
         }
 

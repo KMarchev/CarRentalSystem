@@ -19,6 +19,9 @@ public class Executer {
         executerMap.put("LIST CARS", new ListCars());
         executerMap.put("EDIT CAR", new EditCar());
         executerMap.put("REMOVE CAR", new RemoveCar());
+        executerMap.put("ADD CUSTOMER", new AddCustomer());
+        executerMap.put("REMOVE CUSTOMER", new RemoveCustomer());
+        executerMap.put("LIST CUSTOMERS", new ListCustomers());
     }
 
 

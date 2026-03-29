@@ -1,8 +1,20 @@
 package helper;
 
 import car.CarRepository;
+import customer.CustomerRepository;
 
 public class ValueValidator {
+
+    public static boolean isValidIdCustomer(String value){
+        try{
+            int id=Integer.parseInt(value);
+            return id > 0
+                    && id < Integer.MAX_VALUE - 1
+                    && CustomerRepository.getInstance().searchById(id) == -1;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
     public static boolean isValidId(String value){
         try{
