@@ -50,4 +50,23 @@ public class CarRepository {
                 .toList();
     }
 
+    public Car getCar(int id){
+        return cars.stream()
+                .filter(car -> car.getId()==id)
+                .findFirst()
+                .orElse(null);
+    }
+
+
+    public List<Car> getCarList(){
+        return cars;
+    }
+
+    public List<Car> getCarsByModel(String model){
+        String searchValue = model.trim().toLowerCase();
+
+        return cars.stream()
+                .filter(car -> car.getModel().toLowerCase().equals(searchValue))
+                .toList();
+    }
 }
