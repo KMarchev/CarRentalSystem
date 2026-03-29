@@ -3,7 +3,22 @@ package helper;
 import car.CarRepository;
 import customer.CustomerRepository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class ValueValidator {
+
+    public static boolean isValidDate(String value){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        try {
+            LocalDate.parse(value.trim(), formatter); // Use LocalDate since only date is provided
+            return true;
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+    }
 
     public static boolean isValidIdCustomer(String value){
         try{

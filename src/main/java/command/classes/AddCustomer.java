@@ -21,8 +21,6 @@ public class AddCustomer implements Command {
         if(params.length!=2 || !ValueValidator.isValidIdCustomer(params[0]) || !ValueValidator.isValidName(params[1])){
             throw new CommandException("Invalid arguments for customer creation!");
         }
-
         CustomerRepository.getInstance().addCustomer(new Customer(Integer.parseInt(params[0]),params[1]));
-
     }
 }

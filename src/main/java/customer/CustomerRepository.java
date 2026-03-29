@@ -46,4 +46,11 @@ public class CustomerRepository {
         }
         return -1;
     }
+
+    public Customer getCustomerById(int id){
+        return customerList.stream()
+                .filter(customer -> customer.getId()==id)
+                .findFirst()
+                .orElse(null);
+    }
 }
