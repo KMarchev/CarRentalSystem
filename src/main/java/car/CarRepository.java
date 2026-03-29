@@ -61,4 +61,12 @@ public class CarRepository {
     public List<Car> getCarList(){
         return cars;
     }
+
+    public List<Car> getCarsByModel(String model){
+        String searchValue = model.trim().toLowerCase();
+
+        return cars.stream()
+                .filter(car -> car.getModel().toLowerCase().equals(searchValue))
+                .toList();
+    }
 }

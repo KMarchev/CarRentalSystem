@@ -26,6 +26,7 @@ public class Executer {
         executerMap.put("RETURN RENTAL", new RemoveRental());
         executerMap.put("LIST RENTALS", new ListRentals());
         executerMap.put("HELP", new Help());
+        executerMap.put("SEARCH BY MODEL", new SearchCarByModel());
     }
 
 
