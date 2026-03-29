@@ -18,5 +18,7 @@ public class ListCars implements Command {
         System.out.print("List of all available cars:\n");
 
         CarRepository.getInstance().getAvailableCarsList().forEach(car -> System.out.println(car.toString()));
+
+        System.out.println();
     }
 }

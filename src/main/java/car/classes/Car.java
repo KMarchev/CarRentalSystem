@@ -23,7 +23,7 @@ public abstract class Car {
         this.isAvailable = true;
     }
 
-    protected boolean validateArguments(String[] args){
+    public static boolean validateArguments(String[] args){
         return args.length==5
                 && ValueValidator.isValidId(args[0])
                 && ValueValidator.isValidName(args[1])

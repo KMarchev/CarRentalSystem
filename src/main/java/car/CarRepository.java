@@ -50,4 +50,11 @@ public class CarRepository {
                 .toList();
     }
 
+    public Car getCar(int id){
+        return cars.stream()
+                .filter(car -> car.getId()==id)
+                .findFirst()
+                .orElse(null);
+    }
+
 }

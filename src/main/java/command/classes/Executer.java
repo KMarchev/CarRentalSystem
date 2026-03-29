@@ -17,6 +17,8 @@ public class Executer {
     static {
         executerMap.put("ADD CAR", new AddCar());
         executerMap.put("LIST CARS", new ListCars());
+        executerMap.put("EDIT CAR", new EditCar());
+        executerMap.put("REMOVE CAR", new RemoveCar());
     }
 
 
