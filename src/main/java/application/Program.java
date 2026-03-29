@@ -1,5 +1,7 @@
 package application;
 
+import java.util.Scanner;
+
 /**
  * Main program loop for the Car Rental System command-line interface.
  */
@@ -12,5 +14,6 @@ public class Program {
 
     public static void run(){
         System.out.println("Welcome to the Car Rental System!");
+        Scanner scanner=new Scanner(System.in);
     }
 }
