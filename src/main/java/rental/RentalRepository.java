@@ -36,4 +36,13 @@ public class RentalRepository {
     public List<Rental> getRentalList(){
         return rentalList;
     }
+
+    public boolean searchById(int id){
+        for(Rental rental : rentalList){
+            if(rental.getCarId()==id){
+                return true;
+            }
+        }
+        return false;
+    }
 }

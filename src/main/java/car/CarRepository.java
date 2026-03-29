@@ -57,4 +57,8 @@ public class CarRepository {
                 .orElse(null);
     }
 
+
+    public List<Car> getCarList(){
+        return cars;
+    }
 }

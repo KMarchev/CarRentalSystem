@@ -27,6 +27,7 @@ public class AddRental implements Command {
         String[] params = Arrays.stream(scanner.nextLine().split(",")).map(String::trim).toArray(String[]::new);
 
         if (params.length != 3
+                || !ValueValidator.isValidRental(params[0])
                 || carRepository.searchById(Integer.parseInt(params[0])) == -1
                 || customerRepository.searchById(Integer.parseInt(params[1])) == -1
                 || !ValueValidator.isValidDate(params[2])) {
@@ -42,7 +43,7 @@ public class AddRental implements Command {
                         Integer.parseInt(params[1]),
                         expectedReturn
                 ));
-        carRepository.getCar(Integer.parseInt(params[1])).setAvailable(false);
+        carRepository.getCar(Integer.parseInt(params[0])).setAvailable(false);
         System.out.println("Rental added successfully!");
     }
 }

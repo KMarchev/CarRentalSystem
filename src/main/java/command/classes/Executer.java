@@ -23,8 +23,9 @@ public class Executer {
         executerMap.put("REMOVE CUSTOMER", new RemoveCustomer());
         executerMap.put("LIST CUSTOMERS", new ListCustomers());
         executerMap.put("RENT CAR", new AddRental());
-        executerMap.put("REMOVE RENTAL", new RemoveRental());
+        executerMap.put("RETURN RENTAL", new RemoveRental());
         executerMap.put("LIST RENTALS", new ListRentals());
+        executerMap.put("HELP", new Help());
     }
 
 

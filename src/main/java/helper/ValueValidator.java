@@ -2,6 +2,7 @@ package helper;
 
 import car.CarRepository;
 import customer.CustomerRepository;
+import rental.RentalRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,10 +11,19 @@ import java.time.format.DateTimeParseException;
 
 public class ValueValidator {
 
+    public static boolean isValidRental(String value){
+        try{
+            int idCar=Integer.parseInt(value);
+            return !RentalRepository.getInstance().searchById(idCar);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     public static boolean isValidDate(String value){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         try {
-            LocalDate.parse(value.trim(), formatter); // Use LocalDate since only date is provided
+            LocalDate.parse(value.trim(), formatter);
             return true;
         } catch (DateTimeParseException e) {
             return false;

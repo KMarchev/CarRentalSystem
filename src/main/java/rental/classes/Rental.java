@@ -32,13 +32,14 @@ public class Rental {
     }
 
     public String getFormattedTime(){
-        return expectedReturn.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
+        return expectedReturn.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
     @Override
     public String toString() {
-        return String.format("Car: %s\nCustomer: %s\n"
+        return String.format("Car: %s\nCustomer: %s\nExpected Return Date: %s\n"
                 ,CarRepository.getInstance().getCar(carId)
-                ,CustomerRepository.getInstance().getCustomerById(customerId));
+                ,CustomerRepository.getInstance().getCustomerById(customerId)
+                ,getFormattedTime());
     }
 }
