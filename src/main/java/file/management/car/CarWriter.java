@@ -6,6 +6,9 @@ import exception.FileException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+/**
+ * Utility class responsible for writing car data from the repository to a CSV file.
+ */
 public class CarWriter {
     public static void writeToFile(){
         String filePath="src/main/resource/cars.csv";

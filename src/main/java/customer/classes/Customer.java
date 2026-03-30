@@ -1,5 +1,8 @@
 package customer.classes;
 
+/**
+ * Represents a customer with id and name.
+ */
 public class Customer {
     private int id;
     private String name;
@@ -8,6 +11,7 @@ public class Customer {
         this.id = id;
         this.name = name;
     }
+
 
     public String getName() {
         return name;

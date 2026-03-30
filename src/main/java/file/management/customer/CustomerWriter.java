@@ -7,6 +7,9 @@ import exception.FileException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+/**
+ * Utility class responsible for writing customer data from the repository to a CSV file.
+ */
 public class CustomerWriter {
 
     public static void writeToFile(){

@@ -10,10 +10,18 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Command to create a new car and add it to the CarRepository.
+ * {@link command.interfaces.Command} to create a new car and add it to the CarRepository.
  */
 
 public class AddCar implements Command {
+
+    /**
+     * Executes the create command for Car.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid.
+     */
+
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

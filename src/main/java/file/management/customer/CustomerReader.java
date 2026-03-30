@@ -11,6 +11,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Arrays;
 
+/**
+ * Utility class responsible for reading customer data from a CSV file and populating the CustomerRepository.
+ */
 public class CustomerReader {
     public static void readFromFile(){
         String filePath="src/main/resource/customer.csv";

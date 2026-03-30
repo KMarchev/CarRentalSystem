@@ -5,16 +5,20 @@ import customer.CustomerRepository;
 import rental.RentalRepository;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+
+/**
+ * Utility class that contains helper methods for validating input values
+ * such as strings, numbers, etc.
+ */
 public class ValueValidator {
 
     public static boolean isValidRental(String value){
         try{
             int idCar=Integer.parseInt(value);
-            return !RentalRepository.getInstance().searchById(idCar);
+            return !RentalRepository.getInstance().searchByIdForCar(idCar);
         } catch (NumberFormatException e) {
             return false;
         }

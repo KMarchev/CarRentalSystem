@@ -15,6 +15,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Utility class responsible for reading rental data from a CSV file and populating the CarRepository.
+ */
 public class RentalReader {
     public static void readFromFile(){
         String filePath="src/main/resource/rental.csv";

@@ -15,7 +15,16 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * {@link command.interfaces.Command} to create a new rental and add it to the RentalRepository.
+ */
 public class AddRental implements Command {
+    /**
+     * Executes the create command Rental.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);
