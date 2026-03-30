@@ -10,6 +10,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
+
+/**
+ * Utility class responsible for reading car data from a CSV file and populating the CarRepository.
+ */
 public class CarReader {
 
     public static void readFromFile(){

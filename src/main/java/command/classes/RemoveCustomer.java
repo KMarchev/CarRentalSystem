@@ -7,7 +7,16 @@ import rental.RentalRepository;
 
 import java.util.Scanner;
 
+/**
+ * {@link command.interfaces.Command} to remove an existing customer in the CustomerRepository.
+ */
 public class RemoveCustomer implements Command {
+    /**
+     * Executes the remove command for Customer.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid or rental that uses the customer exists.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

@@ -61,6 +61,12 @@ public class Program {
         System.out.println("Goodbye!");
     }
 
+    /**
+     * Initializes the application by loading data from files.
+     * <p>
+     * This method reads car, customer, and rental data from their respective sources.
+     * If a file-related error occurs, the program prints the error message and terminates.
+     */
     public static void initProgram(){
         try {
             CarReader.readFromFile();
@@ -72,6 +78,12 @@ public class Program {
         }
     }
 
+    /**
+     * Finalizes the application by saving data to files.
+     * <p>
+     * This method writes car, customer, and rental data to their respective files.
+     * If a file-related error occurs, the program prints the error message and terminates.
+     */
     public static void endProgram(){
         try {
             CarWriter.writeToFile();

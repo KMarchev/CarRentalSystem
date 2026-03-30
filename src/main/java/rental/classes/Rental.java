@@ -8,6 +8,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a car rental.
+ *
+ * Stores information about which car is rented,
+ * which customer rented it, and the expected return date.
+ */
 public class Rental {
     private int carId;
     private int customerId;
@@ -31,6 +37,11 @@ public class Rental {
         return expectedReturn;
     }
 
+    /**
+     * Formats the expected return date as a readable string.
+     *
+     * @return formatted date (dd-MM-yyyy)
+     */
     public String getFormattedTime(){
         return expectedReturn.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }

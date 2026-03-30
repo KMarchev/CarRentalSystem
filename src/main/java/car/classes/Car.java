@@ -3,15 +3,29 @@ package car.classes;
 import exception.CarCreateException;
 import helper.ValueValidator;
 
+/**
+ * Abstract base class representing a car.
+ * <p>
+ * Stores common properties such as id, maker, model, year, type,
+ * and availability status. This class is intended to be extended
+ * by specific types of cars.
+ */
 public abstract class Car {
-    protected int id;
-    protected String maker;
-    protected String model;
-    protected int year;
-    protected String type;
-    protected boolean isAvailable;
+    private int id;
+    private String maker;
+    private String model;
+    private int year;
+    private String type;
+    private boolean isAvailable;
 
-    public Car(String[] params) {
+    /**
+     * Creates a Car object using an array of parameters.
+     * Expected order: id, maker, model, year, type.
+     *
+     * @param params array of car properties
+     * @throws CarCreateException if the provided arguments are invalid
+     */
+    protected Car(String[] params) {
         if(!validateArguments(params)){
             throw new CarCreateException("Invalid arguments!\n");
         }
@@ -23,8 +37,15 @@ public abstract class Car {
         this.isAvailable = true;
     }
 
+    /**
+     * Validates the input arguments used to create a Car.
+     * Checks length and correctness of each field.
+     *
+     * @param args array of input values
+     * @return true if all arguments are valid, false otherwise
+     */
     public static boolean validateArguments(String[] args){
-        return args.length==5
+        return args.length>=5
                 && ValueValidator.isValidId(args[0])
                 && ValueValidator.isValidName(args[1])
                 && ValueValidator.isValidName(args[2])

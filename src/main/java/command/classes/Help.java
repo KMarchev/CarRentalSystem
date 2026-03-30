@@ -1,8 +1,18 @@
 package command.classes;
 
 import command.interfaces.Command;
+import exception.CommandException;
+
+/**
+ * {@link command.interfaces.Command} that prints a list of all currently available commands.
+ */
 
 public class Help implements Command {
+    /**
+     * Executes the help command.
+     *
+     * @param args not used.
+     */
     @Override
     public void execute(String args) throws Exception {
         System.out.print("""

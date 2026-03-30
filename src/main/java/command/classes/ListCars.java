@@ -3,14 +3,20 @@ package command.classes;
 import car.CarRepository;
 import car.classes.Car;
 import command.interfaces.Command;
+import exception.CommandException;
 
 import java.util.Scanner;
 
 /**
- * Command to show all cars that are available.
+ * {@link command.interfaces.Command} to show all cars that are available.
  */
 
 public class ListCars implements Command {
+    /**
+     * Executes the 'show all currently available cars' command for Car.
+     *
+     * @param args not used.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

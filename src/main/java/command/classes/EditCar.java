@@ -10,7 +10,17 @@ import helper.ValueValidator;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+/**
+ * {@link command.interfaces.Command} to edit an existing car in the CarRepository.
+ */
 public class EditCar implements Command {
+    /**
+     * Executes the edit command for Car.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

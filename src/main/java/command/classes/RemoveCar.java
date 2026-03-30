@@ -7,7 +7,16 @@ import rental.RentalRepository;
 
 import java.util.Scanner;
 
+/**
+ * {@link command.interfaces.Command} to remove an existing car in the CarRepository.
+ */
 public class RemoveCar implements Command {
+    /**
+     * Executes the remove command for Car.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid or rental that uses the car exists.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

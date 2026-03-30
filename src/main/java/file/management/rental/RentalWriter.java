@@ -9,6 +9,9 @@ import rental.classes.Rental;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
+/**
+ * Utility class responsible for writing rental data from the repository to a CSV file.
+ */
 public class RentalWriter {
 
     public static void writeToFile(){

@@ -34,7 +34,7 @@ public class Executer {
      * Returns the Command corresponding to the argument.
      *
      * @param args command arguments.
-     * @return Command instance mapped to the command.
+     * @return {@link command.interfaces.Command} instance mapped to the command.
      * @throws CommandException if no arguments are provided or command is invalid.
      */
 

@@ -9,7 +9,18 @@ import helper.ValueValidator;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * {@link command.interfaces.Command} to create a new customer and add it to the CustomerRepository.
+ */
+
 public class AddCustomer implements Command {
+
+    /**
+     * Executes the create command for Car.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

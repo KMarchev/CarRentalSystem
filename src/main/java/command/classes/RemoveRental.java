@@ -7,7 +7,16 @@ import rental.RentalRepository;
 
 import java.util.Scanner;
 
+/**
+ * {@link command.interfaces.Command} to remove an existing rental in the RentalRepository.
+ */
 public class RemoveRental implements Command {
+    /**
+     * Executes the remove command for Rental.
+     *
+     * @param args not used.
+     * @throws CommandException if user input is invalid.
+     */
     @Override
     public void execute(String args) throws Exception {
         Scanner scanner = new Scanner(System.in);

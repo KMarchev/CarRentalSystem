@@ -8,6 +8,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+
+/**
+ * Utility class that contains helper methods for validating input values
+ * such as strings, numbers, etc.
+ */
 public class ValueValidator {
 
     public static boolean isValidRental(String value){
