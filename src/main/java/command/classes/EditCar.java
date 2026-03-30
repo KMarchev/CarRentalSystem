@@ -34,9 +34,17 @@ public class EditCar implements Command {
             throw new CommandException("Invalid arguments! Change was not saved.");
         }
 
-        repository.getCar(id).setMaker(params[0]);
-        repository.getCar(id).setModel(params[1]);
-        repository.getCar(id).setYear(Integer.parseInt(params[2]));
-        repository.getCar(id).setType(params[3]);
+        String[] newValues=new String[params.length+1];
+        System.arraycopy(params,0,newValues,1,params.length);
+
+        Car car = repository.getCar(id);
+
+        newValues[0]=String.valueOf(car.getId());
+        boolean isAvailable=car.isAvailable();
+        int indexOfCar=repository.searchById(id);
+
+        repository.removeCarById(id);
+        repository.addCarAtIndex(indexOfCar,CarFactory.createCar(newValues));
+        repository.getCar(id).setAvailable(isAvailable);
     }
 }

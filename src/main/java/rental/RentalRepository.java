@@ -37,9 +37,18 @@ public class RentalRepository {
         return rentalList;
     }
 
-    public boolean searchById(int id){
+    public boolean searchByIdForCar(int id){
         for(Rental rental : rentalList){
             if(rental.getCarId()==id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean searchByIdForCustomer(int id){
+        for(Rental rental : rentalList){
+            if(rental.getCustomerId()==id){
                 return true;
             }
         }

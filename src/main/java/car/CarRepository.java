@@ -69,4 +69,8 @@ public class CarRepository {
                 .filter(car -> car.getModel().toLowerCase().equals(searchValue))
                 .toList();
     }
+
+    public void addCarAtIndex(int index, Car car){
+        cars.add(index,car);
+    }
 }

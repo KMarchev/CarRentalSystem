@@ -3,6 +3,7 @@ package command.classes;
 import car.CarRepository;
 import command.interfaces.Command;
 import exception.CommandException;
+import rental.RentalRepository;
 
 import java.util.Scanner;
 
@@ -17,6 +18,10 @@ public class RemoveCar implements Command {
         scanner.nextLine();
         if(repository.searchById(id)==-1){
             throw new CommandException("No car found with ID: "+id);
+        }
+
+        if(RentalRepository.getInstance().searchByIdForCar(id)){
+            throw new CommandException("Please make sure to remove all rentals before removing the car!");
         }
 
         repository.removeCarById(id);

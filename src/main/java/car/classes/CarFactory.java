@@ -37,7 +37,7 @@ public class CarFactory {
     }
 
     public static boolean isValidType(String type){
-        Class<? extends Car> car = carList.get(carList.get(type));
+        Class<? extends Car> car = carList.get(type);
         return car != null;
     }
 }
